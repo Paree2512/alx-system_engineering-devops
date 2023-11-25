@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# script kills another script running in another terminal without using kill or killall
+# (need -f to find pid)
+# for 7-highlander
+
+pkill -f "7-highlander"
