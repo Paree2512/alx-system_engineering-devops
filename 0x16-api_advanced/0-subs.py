@@ -1,37 +1,36 @@
 #!/usr/bin/python3
 
-"""Query Reddit API for number of subscribers for a given subreddit."""
-
+'''
+A module containing functions for working with the Reddit API.
+'''
 import requests
 
 
+BASE_URL = 'https://www.reddit.com'
+'''
+Reddit's base API URL.
+'''
+
+
 def number_of_subscribers(subreddit):
-    """
-    Returns the number of subscribers for a given subreddit.
-
-    Args:
-    - subreddit (str): The name of the subreddit.
-    Returns:
-    - int: Number of subscribers, or 0 if the subreddit is invalid.
-    """
-
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    # Ensure a custom User-Agent to prevent errors.
-    headers = {'User-Agent': 'My User Agent'}
-
-    try:
-        # Send GET request to Reddit API
-        response = requests.get(url, headers=headers, allow_redirects=False)
-        # Parse response as JSON
-        data = response.json()
-
-        # Check if 'data' key exists and 'subscribers' key exists within it
-        if 'data' in data and 'subscribers' in data['data']:
-            # Return the number of subscribers
-            return data['data']['subscribers']
-        else:
-            # Return 0 if 'data' or 'subscribers' key doesn't exist
-            return 0
-    except Exception:
-        # Return 0 if there's any exception during the request
-        return 0
+    '''
+    Retrieves the number of subscribers in a given subreddit.
+    '''
+    api_headers = {
+        'Accept': 'application/json',
+        'User-Agent': ' '.join([
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+            'AppleWebKit/537.36 (KHTML, like Gecko)',
+            'Chrome/97.0.4692.71',
+            'Safari/537.36',
+            'Edg/97.0.1072.62'
+        ])
+    }
+    res = requests.get(
+        '{}/r/{}/about/.json'.format(BASE_URL, subreddit),
+        headers=api_headers,
+        allow_redirects=False
+    )
+    if res.status_code == 200:
+        return res.json()['data']['subscribers']
+    return 0
