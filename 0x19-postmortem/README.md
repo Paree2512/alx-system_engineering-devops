@@ -50,7 +50,7 @@ While postmortem format can vary, stick to this one so that you can get properly
 
 Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
 
-    Google Doc
+    Google Doc: https://docs.google.com/document/d/1NHGOT0taVaGSCwexNEsM9hBFL8tczjWvlpfAh7OK3zg/edit?usp=sharing
 
     Medium Blog
 
