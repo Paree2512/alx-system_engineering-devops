@@ -52,6 +52,6 @@ Please, remember that these blogs must be written in English to further your tec
 
     Google Doc: https://docs.google.com/document/d/1NHGOT0taVaGSCwexNEsM9hBFL8tczjWvlpfAh7OK3zg/edit?usp=sharing
 
-    Medium Blog
+    Medium Blog: https://medium.com/@benjaminsemevor/disruption-in-web-stack-operations-post-mortem-33bbec7cfa9e
 
 
